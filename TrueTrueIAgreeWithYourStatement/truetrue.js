@@ -1,14 +1,22 @@
-/* to do: get channel id, when alt+f5 pressed, send https://tenor.com/view/funny-gif-23169978 to the channel */
-
-import { findByProps } from "@cumcord/modules/webpack"
+import { findByProps, findAll } from "@cumcord/modules/webpack"
 const { getChannelId } = findByProps("getChannelId", "getVoiceChannelId");
+const messageQueue = findAll(arg => arg.enqueue)[0]
 
-
-const keyhandler = async (event) => {
+const keyHandler = async (event) => {
     if (event.code == "F5") {
         event.preventDefault();
-        console.log(getChannelId())
-        /* figure out how to send a message and put it as the gif */
+        messageQueue.enqueue(
+            {
+                "type": 0,
+                "message": {
+                    channelId: getChannelId(),
+                    content: "https://tenor.com/view/funny-gif-23169978"
+                }
+            },
+            r => {
+                return;
+            }
+        )
     }
 }
 
@@ -16,11 +24,11 @@ export default (data) => {
     return {
         onLoad() {
 
-            document.addEventListener("keydown", keyhandler)
+            document.addEventListener("keydown", keyHandler)
         },
         onUnload() {
             
-            document.removeEventListener("keydown", keyhandler)
+            document.removeEventListener("keydown", keyHandler)
         }
     }
 }
