@@ -25,7 +25,7 @@ const keyHandler = async (event) => {
                 "type": 0,
                 "message": {
                     channelId: getChannelId(),
-                    content: "https://cdn.discordapp.com/attachments/903761538568032268/904159350740910150/true.png"
+                    content: "https://i.imgur.com/kJonTcq.png"
                 }
             },
             r => {
