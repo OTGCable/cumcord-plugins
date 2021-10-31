@@ -18,6 +18,21 @@ const keyHandler = async (event) => {
             }
         )
     }
+    if (event.code == "F6") {
+        event.preventDefault();
+        messageQueue.enqueue(
+            {
+                "type": 0,
+                "message": {
+                    channelId: getChannelId(),
+                    content: "https://cdn.discordapp.com/attachments/903761538568032268/904159350740910150/true.png"
+                }
+            },
+            r => {
+                return;
+            }
+        )
+    }
 }
 
 export default (data) => {
