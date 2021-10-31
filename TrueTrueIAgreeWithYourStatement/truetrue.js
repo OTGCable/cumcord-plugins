@@ -18,6 +18,9 @@ const keyHandler = async (event) => {
             }
         )
     }
+}
+
+const keyHandler = async (event) => {
     if (event.code == "F6") {
         event.preventDefault();
         messageQueue.enqueue(
