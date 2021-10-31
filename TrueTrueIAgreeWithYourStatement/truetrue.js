@@ -3,7 +3,7 @@ const { getChannelId } = findByProps("getChannelId", "getVoiceChannelId");
 const messageQueue = findAll(arg => arg.enqueue)[0]
 
 const keyHandler = async (event) => {
-    if (event.code == "F5") {
+    if (event.code == "Shift") + (event.code == "5") {
         event.preventDefault();
         messageQueue.enqueue(
             {
@@ -21,7 +21,7 @@ const keyHandler = async (event) => {
 }
 
 const keyHandler = async (event) => {
-    if (event.code == "F6") {
+    if (event.code == "Shift") + (event.code == "6") {
         event.preventDefault();
         messageQueue.enqueue(
             {
