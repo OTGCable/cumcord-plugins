@@ -25,9 +25,6 @@ function keyHandler(event) {
     } else if(event.altKey == true && event.keyCode == 72) { // ALT + H - Beef
         event.preventDefault();
         return enqueueMessage("https://i.imgur.com/kJonTcq.png");
-    } else if(event.altKey == true && event.keyCode == 69) { // ALT + E - el rick
-        event.preventDefault();
-        return enqueueMessage(`https://${(Math.random() + 1).toString(36).substring(2)}.elrick.fans`);
     }
 
     return event;
