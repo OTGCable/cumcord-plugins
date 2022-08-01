@@ -24,7 +24,7 @@ function keyHandler(event) {
         return enqueueMessage("https://tenor.com/view/funny-gif-23169978");
     } else if(event.altKey == true && event.keyCode == 72) { // ALT + H - Beef
         event.preventDefault();
-        return enqueueMessage("https://i.imgur.com/kJonTcq.png");
+        return enqueueMessage("https://media.discordapp.net/attachments/981688516935315497/987909824933134416/IMG_2303.png?width=447&height=676");
     }
 
     return event;
